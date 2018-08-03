@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFF17C99-2FFF-4180-9CFD-167A7EFED920}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PipeProcess</RootNamespace>
-    <AssemblyName>PipeProcess</AssemblyName>
+    <ProjectGuid>{122E3FF9-24E5-4E25-809A-0BE2FFCD05AA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PFConsole</RootNamespace>
+    <AssemblyName>PFConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,17 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filter2.cs" />
-    <Compile Include="Filter1.cs" />
-    <Compile Include="Filter3.cs" />
-    <Compile Include="MyMsg.cs" />
-    <Compile Include="APipeProcess.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PipeFilterLib\PipeFilterLib.csproj">
       <Project>{5e60f151-5b3a-421a-9b2f-3d8f6290ef0d}</Project>
       <Name>PipeFilterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PipeProcess\PipeProcess.csproj">
+      <Project>{eff17c99-2fff-4180-9cfd-167a7efed920}</Project>
+      <Name>PipeProcess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

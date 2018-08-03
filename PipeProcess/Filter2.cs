@@ -11,16 +11,25 @@ namespace PipeProcess
     {
         public bool Execute(MyMsg msg)
         {
-            string m = msg.AMessage;
-            m.Reverse();
-            msg.AMessage = m;
+            msg.AMessage = Reverse(msg.AMessage);
             viewMessage(msg);
             return true;
         }
 
         private void viewMessage(MyMsg msg)
         {
-            Console.WriteLine(msg.AMessage);
+            Console.WriteLine("F2: {0}", msg.AMessage);
+        }
+
+        private string Reverse(string msg)
+        {
+            StringBuilder temp = new StringBuilder(msg.Length);
+            for (int i = msg.Length - 1; i >= 0; i--)
+            {
+                temp.Append(msg[i]);
+            }
+            msg = temp.ToString();
+            return msg;
         }
     }
 }

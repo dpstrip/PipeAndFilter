@@ -7,14 +7,11 @@ using PipeFilterLib.Interfaces;
 
 namespace PipeProcess
 {
-    class Filter3 : IFilter<MyMsg>
+    public class Filter3 : IFilter<MyMsg>
     {
         public bool Execute(MyMsg msg)
         {
-            string m = msg.AMessage;
-            m.Reverse();
-            m.Insert(3, " I did something else ");
-            msg.AMessage = m;
+            msg.AMessage = msg.AMessage.Insert(3, "I did someting else");
             viewMessage(msg);
             return true;
         }

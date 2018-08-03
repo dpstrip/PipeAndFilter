@@ -7,7 +7,7 @@ using PipeFilterLib.Interfaces;
 
 namespace PipeProcess
 {
-    class Filter1 : IFilter<MyMsg>
+    public class Filter1 : IFilter<MyMsg>
     {
         public bool Execute(MyMsg msg)
         {

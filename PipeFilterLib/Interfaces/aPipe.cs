@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PipeFilterLib.Interfaces
 {
-    public abstract class aPipe
+    public abstract class aPipe<T>
     {
-        public List<IFilter<IMsg>> pipeLine = new List<IFilter<IMsg>>();
-        public IMsg msg;
+        public List<IFilter<T>> pipeLine = new List<IFilter<T>>();
+        public T msg;
 
-        public void Register(IFilter<IMsg> filter)
+        public void Register(IFilter<T> filter)
         {
             pipeLine.Add(filter);
         }
@@ -20,7 +20,7 @@ namespace PipeFilterLib.Interfaces
         {
             try
             {
-                foreach (IFilter<IMsg> filter in pipeLine)
+                foreach (IFilter<T> filter in pipeLine)
                 {
                     filter.Execute(msg);
                 }
